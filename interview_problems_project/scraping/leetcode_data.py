@@ -6,8 +6,6 @@ Created on Sat Feb 18 17:27:52 2023
 """
 
 import requests
-import pandas as pd
-import time
 
 
 def fetch_leetcode_problems(difficulty=None, tags=[], companies=[], listId=None, limit=3000):
@@ -206,19 +204,4 @@ def fetch_problem_content(title):
 if __name__ == "__main__":
   problem_list = fetch_leetcode_problems()
   for i in range(5):
-    time.sleep(0.5)
     print(fetch_problem_content(problem_list[i]["titleSlug"]))
-
-  
-    
-    
-    
-  
-
-
-  
-    
-    
-    
-  
-
