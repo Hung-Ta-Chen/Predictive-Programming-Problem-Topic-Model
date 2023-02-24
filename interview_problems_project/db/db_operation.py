@@ -97,8 +97,7 @@ def search_rows(table_name, col_list=["*"], filters=""):
       query += ","
     else:
       query += " "
-  query += f"FROM {table_name} WHERE "
-  query += filters
+  query += f"FROM {table_name} WHERE {filters}"
   
   with MySQLConnection(**db_config) as conn:
     with conn.cursor() as cursor:
@@ -139,8 +138,7 @@ def search_rows_g(table_name, col_list=["*"], filters="", size=100):
       query += ","
     else:
       query += " "
-  query += f"FROM {table_name} WHERE "
-  query += filters
+  query += f"FROM {table_name} WHERE {filters}"
   
   with MySQLConnection(**db_config) as conn:
     with conn.cursor() as cursor:
@@ -154,6 +152,21 @@ def search_rows_g(table_name, col_list=["*"], filters="", size=100):
         print('Error:', e)
   
 
+def delete_rows(table_name, filters=""):
+  db_config = read_db_config()
+  
+  query = f"DELETE FROM {table_name} WHERE {filters}"
+  
+  with MySQLConnection(**db_config) as conn:
+    with conn.cursor() as cursor:
+      try:
+        cursor.execute(query)   
+        conn.commit()
+          
+      except Error as e:
+        print('Error:', e)
+  
+  
 if __name__ == "__main__":
   # create_table("test", ["name VARCHAR(255)", "country VARCHAR(255)"])
   # insert_row("test", ["name", "country"], ["Yoel Romero", "Cuba"])
@@ -164,6 +177,11 @@ if __name__ == "__main__":
   # insert_row("test", ["name", "country"], ["Henry Cejudo", "US"])
   # insert_row("test", ["name", "country"], ["Saitiev Adam", "Russia"])
 
-  for i in search_rows_g("test", filters="country = 'Cuba'"):
+  for i in search_rows_g("test", filters="country = 'US'"):
+    print(i)
+    
+  delete_rows("test", "name='Kyle Dake'")
+  
+  for i in search_rows_g("test", filters="country = 'US'"):
     print(i)
   
