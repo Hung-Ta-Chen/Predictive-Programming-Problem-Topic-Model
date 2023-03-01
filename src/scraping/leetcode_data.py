@@ -9,6 +9,12 @@ import requests
 
 
 def fetch_leetcode_problems(difficulty=None, tags=[], companies=[], listId=None, limit=3000):
+  # Type of filters:
+  # (1) difficulty: "EASY", "MEDIUM", "HARD"
+  # (2) tags (as a list, all lowercase, whitespace replaced by dash): "string", "array", "dynamic-programming", etc
+  # (3) companies (as a list, all lowercase, whitespace replaced by dash):  "amazon", "goldman-sachs", etc
+  # (4) listId: "7p5x763", etc
+  
   result = []
 
   # API endpoint
