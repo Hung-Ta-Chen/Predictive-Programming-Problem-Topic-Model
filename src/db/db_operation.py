@@ -97,7 +97,9 @@ def search_rows(table_name, col_list=["*"], filters=""):
       query += ","
     else:
       query += " "
-  query += f"FROM {table_name} WHERE {filters}"
+  query += f"FROM {table_name}"
+  if filters:
+     query += " WHERE {filters}"
   
   with MySQLConnection(**db_config) as conn:
     with conn.cursor() as cursor:
@@ -138,7 +140,9 @@ def search_rows_g(table_name, col_list=["*"], filters="", size=100):
       query += ","
     else:
       query += " "
-  query += f"FROM {table_name} WHERE {filters}"
+  query += f"FROM {table_name}"
+  if filters:
+     query += " WHERE {filters}"
   
   with MySQLConnection(**db_config) as conn:
     with conn.cursor() as cursor:
@@ -176,12 +180,12 @@ if __name__ == "__main__":
   # insert_row("test", ["name", "country"], ["Bo Nickal", "US"])
   # insert_row("test", ["name", "country"], ["Henry Cejudo", "US"])
   # insert_row("test", ["name", "country"], ["Saitiev Adam", "Russia"])
-
-  for i in search_rows_g("test", filters="country = 'US'"):
-    print(i)
-    
-  delete_rows("test", "name='Kyle Dake'")
+  s = []
+  for r in search_rows("leetcode_topic"):
+    s.append(r[2])
+  print(set(s))
+  print(len(set(s)))
   
-  for i in search_rows_g("test", filters="country = 'US'"):
-    print(i)
+
+  
   

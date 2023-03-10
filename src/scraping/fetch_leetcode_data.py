@@ -94,11 +94,13 @@ def setup_tables():
   
 
 if __name__ == "__main__":
+# =============================================================================
+#   Here we fetch the data from using leetcode graphql api,
+#   and save the data into local mysql database,
+# =============================================================================
+  
   setup_tables()
   problem_list = fetch_leetcode_problems()
-  company_table = []
-  stat_table = []
-  content_table = []
   problem_cols = [
     "id", 
     "title_slug",
