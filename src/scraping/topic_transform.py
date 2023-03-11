@@ -101,8 +101,40 @@ def codechef2leetcode(tag_list):
       new_tag_list.add("Union Find")
   
   return list(new_tag_list)
+
+
+def interviewbit2leetcode(tag_list):
+  tag_map = {
+    "Arrays": "Array",
+    "Backtracking": "Backtracking",
+    "Binary Search": "Binary Search",
+    "Bit Manipulation": "Bit Manipulation",
+    "Dynamic Programming": "Dynamic Programming",
+    "Graph Data Structure & Algorithms": "Graph",
+    "Greedy Algorithm": "Greedy",
+    "Hashing": "Hash Function",
+    "Linked Lists": "Linked List",
+    "Math": "Math",
+    "permutation & combination": "Combinatorics",
+    "Sorting": "Sorting",
+    "Strings": "String",
+    "Tree Data Structure": "Tree",
+    "Two Pointers": "Two Pointers"
+  }
+  new_tag_list = set({})
+  for tag in tag_list:
+    if tag in tag_map:
+      new_tag_list.add(tag_map[tag])
+    elif tag == "Heaps And Maps":
+      new_tag_list.add("Heap (Priority Queue)")
+      new_tag_list.add("Hash Table")
+    elif tag == "Stacks And Queues":
+      new_tag_list.add("Stack")
+      new_tag_list.add("Queue")
   
+  return list(new_tag_list)
+    
 
 if __name__ == "__main__":
-  print(codechef2leetcode(['acmkgp14', 'admin', 'easy-medium', 'fenwick-tree', 'segment-tree', 'sorting']))
-  
+  #print(codechef2leetcode(['acmkgp14', 'admin', 'easy-medium', 'fenwick-tree', 'segment-tree', 'sorting']))
+  print(interviewbit2leetcode(["Heaps And Maps"]))
