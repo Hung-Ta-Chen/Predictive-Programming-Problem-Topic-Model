@@ -1,4 +1,0 @@
-In combinatorial mathematics, a derangement is a permutation of the elements of a set, such that no element appears in its original position.
-
-You are given an integer n. There is originally an array consisting of n integers from 1 to n in ascending order, return the number of derangements it can generate. Since the answer may be huge, return it modulo 109 + 7.
-

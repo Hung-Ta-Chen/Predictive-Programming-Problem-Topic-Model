@@ -1,9 +1,0 @@
-You are given a 2D array of strings equations and an array of real numbers values, where equations[i] = [Ai, Bi] and values[i] means that Ai / Bi = values[i].
-
-Determine if there exists a contradiction in the equations. Return true if there is a contradiction, or false otherwise.
-
-Note:
-
-When checking if two numbers are equal, check that their absolute difference is less than 10-5.
-The testcases are generated such that there are no cases targeting precision, i.e. using double is enough to solve the problem.
-

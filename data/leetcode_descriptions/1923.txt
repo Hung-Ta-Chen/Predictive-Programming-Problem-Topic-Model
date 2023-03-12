@@ -1,8 +1,0 @@
-You are given a 2D integer array trees where trees[i] = [xi, yi] represents the location of the ith tree in the garden.
-
-You are asked to fence the entire garden using the minimum length of rope possible. The garden is well-fenced only if all the trees are enclosed and the rope used forms a perfect circle. A tree is considered enclosed if it is inside or on the border of the circle.
-
-More formally, you must form a circle using the rope with a center (x, y) and radius r where all trees lie inside or on the circle and r is minimum.
-
-Return the center and radius of the circle as a length 3 array [x, y, r]. Answers within 10-5 of the actual answer will be accepted.
-

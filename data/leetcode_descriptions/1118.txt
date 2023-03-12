@@ -1,2 +1,0 @@
-Given a string s, remove the vowels 'a', 'e', 'i', 'o', and 'u' from it, and return the new string.
-
