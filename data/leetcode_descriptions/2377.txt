@@ -1,0 +1,17 @@
+You are given a weighted tree consisting of n nodes numbered from 0 to n - 1.
+
+The tree is rooted at node 0 and represented with a 2D array edges of size n where edges[i] = [pari, weighti] indicates that node pari is the parent of node i, and the edge between them has a weight equal to weighti. Since the root does not have a parent, you have edges[0] = [-1, -1].
+
+Choose some edges from the tree such that no two chosen edges are adjacent and the sum of the weights of the chosen edges is maximized.
+
+Return the maximum sum of the chosen edges.
+
+Note:
+
+You are allowed to not choose any edges in the tree, the sum of weights in this case will be 0.
+Two edges Edge1 and Edge2 in the tree are adjacent if they have a common node.
+
+In other words, they are adjacent if Edge1 connects nodes a and b and Edge2 connects nodes b and c.
+
+
+

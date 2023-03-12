@@ -1,0 +1,6 @@
+Given a non-negative integer num, Return its encoding string. 
+
+The encoding is done by converting the integer to a string using a secret function that you should deduce from the following table: 
+
+
+

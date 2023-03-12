@@ -1,0 +1,6 @@
+Given an integer array nums of length n, return true if there is a triplet (i, j, k) which satisfies the following conditions:
+
+0 < i, i + 1 < j, j + 1 < k < n - 1
+The sum of subarrays (0, i - 1), (i + 1, j - 1), (j + 1, k - 1) and (k + 1, n - 1) is equal.
+
+A subarray (l, r) represents a slice of the original array starting from the element indexed l to the element indexed r.

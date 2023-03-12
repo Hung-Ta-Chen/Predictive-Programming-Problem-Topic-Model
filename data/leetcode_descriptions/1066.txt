@@ -1,0 +1,2 @@
+Given a single-digit integer d and two integers low and high, return the number of times that d occurs as a digit in all integers in the inclusive range [low, high].
+

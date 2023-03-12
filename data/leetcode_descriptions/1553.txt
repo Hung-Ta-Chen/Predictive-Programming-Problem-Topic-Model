@@ -1,0 +1,4 @@
+Given a list of strings dict where all the strings are of the same length.
+
+Return true if there are 2 strings that only differ by 1 character in the same index, otherwise return false.
+

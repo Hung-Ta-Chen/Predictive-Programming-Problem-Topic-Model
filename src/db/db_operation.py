@@ -99,7 +99,7 @@ def search_rows(table_name, col_list=["*"], filters=""):
       query += " "
   query += f"FROM {table_name}"
   if filters:
-     query += " WHERE {filters}"
+     query += f" WHERE {filters}"
   
   with MySQLConnection(**db_config) as conn:
     with conn.cursor() as cursor:
@@ -182,7 +182,7 @@ if __name__ == "__main__":
   # insert_row("test", ["name", "country"], ["Saitiev Adam", "Russia"])
   s = []
   for r in search_rows("leetcode_topic"):
-    s.append(r[2])
+    print(r)
   print(set(s))
   print(len(set(s)))
   

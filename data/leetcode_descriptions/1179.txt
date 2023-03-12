@@ -1,0 +1,2 @@
+Given a string s, return the number of substrings that have only one distinct letter.
+

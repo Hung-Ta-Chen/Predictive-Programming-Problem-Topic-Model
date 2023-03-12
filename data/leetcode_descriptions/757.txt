@@ -1,0 +1,4 @@
+Given an array of keywords words and a string s, make all appearances of all keywords words[i] in s bold. Any letters between <b> and </b> tags become bold.
+
+Return s after adding the bold tags. The returned string should use the least number of tags possible, and the tags should form a valid combination.
+

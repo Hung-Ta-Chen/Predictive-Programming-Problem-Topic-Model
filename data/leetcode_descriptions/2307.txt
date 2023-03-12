@@ -1,0 +1,10 @@
+Table: Genders
+
+
+
+Write an SQL query to rearrange the Genders table such that the rows alternate between 'female', 'other', and 'male' in order. The table should be rearranged such that the IDs of each gender are sorted in ascending order.
+
+Return the result table in the mentioned order.
+
+The query result format is shown in the following example.
+

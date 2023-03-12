@@ -1,0 +1,6 @@
+Given the root of an N-ary tree of unique values, and two nodes of the tree p and q.
+
+You should move the subtree of the node p to become a direct child of node q. If p is already a direct child of q, do not change anything. Node p must be the last child in the children list of node q.
+
+Return the root of the tree after adjusting it.
+
