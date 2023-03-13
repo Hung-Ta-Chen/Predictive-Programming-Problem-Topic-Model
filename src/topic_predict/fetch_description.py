@@ -30,4 +30,4 @@ if __name__ == "__main__":
       topic_str = ",".join(topic_list)
       topic_str += "\n"
       f.write(topic_str)
-        
+      
