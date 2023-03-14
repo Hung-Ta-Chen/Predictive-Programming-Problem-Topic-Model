@@ -12,9 +12,9 @@ import os
 
 
 class LeetcodeDataset(Dataset):
-  def __init__(self, data_dir, max_len=256):
-    self.desc_dir = os.path.join(data_dir, "leetcode_descriptions")
-    self.topics_file = os.path.join(data_dir, "leetcode_topics.txt")
+  def __init__(self, data_dir, desc_dirname, topic_filename, max_len=256):
+    self.desc_dir = os.path.join(data_dir, desc_dirname)
+    self.topics_file = os.path.join(data_dir, topic_filename)
     self.max_len = max_len
     with open(self.topics_file, "r") as f:
         self.topics = [line.strip().split(",") for line in f]
@@ -47,9 +47,13 @@ class LeetcodeDataset(Dataset):
     topic_label = [int(topic in topics) for topic in all_topics]
     
     # return the encoding and corresponding topic
-    return desc, encoding, topic_label
+    return {
+      "input_ids": encoding["input_ids"].squeeze(0),
+      "attention_mask": encoding["attention_mask"].squeeze(0),
+      "labels": torch.tensor(topic_label)
+    }
 
 
 if __name__ == "__main__":
-  dataset = LeetcodeDataset("../../data/")
-  print(dataset[-1])
+  dataset = LeetcodeDataset("../../data/", "leetcode_descriptions", "leetcode_topics.txt")
+  print(dataset[1])
