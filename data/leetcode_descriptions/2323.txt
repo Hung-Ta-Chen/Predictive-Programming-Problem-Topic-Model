@@ -1,8 +1,0 @@
-Table: Sales
-
-Write an SQL query that reports for each user the product id on which the user spent the most money. In case the same user spent the most money on two or more products, report all of them.
-
-Return the resulting table in any order.
-
-The query result format is in the following example.
-

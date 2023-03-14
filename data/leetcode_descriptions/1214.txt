@@ -1,6 +1,0 @@
-A stepping number is an integer such that all of its adjacent digits have an absolute difference of exactly 1.
-
-For example, 321 is a stepping number while 421 is not.
-
-Given two integers low and high, return a sorted list of all the stepping numbers in the inclusive range [low, high].
-

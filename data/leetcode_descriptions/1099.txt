@@ -1,2 +1,0 @@
-Given a string s and an integer k, return the number of substrings in s of length k with no repeated characters.
-

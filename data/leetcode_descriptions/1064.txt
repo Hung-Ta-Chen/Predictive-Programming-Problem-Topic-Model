@@ -1,4 +1,0 @@
-Given a string text and an array of strings words, return an array of all index pairs [i, j] so that the substring text[i...j] is in words.
-
-Return the pairs [i, j] in sorted order (i.e., sort them by their first coordinate, and in case of ties sort them by their second coordinate).
-
