@@ -6,10 +6,10 @@ Created on Mon Mar 20 17:07:06 2023
 """
 import numpy as np
 import torch
-import random
 from torch.utils.data import DataLoader, random_split
 from dataset import LeetcodeDataset
 from model import LeetCodeTopicModel
+import secrets
 
 
 def predict(test_loader, model, device):
@@ -87,7 +87,7 @@ if __name__ == "__main__":
   NUM_CLASSES = 47
 
   # Set random seeds for reproducibility
-  random.seed(42)
+  secrets.SystemRandom().seed(42)
   torch.manual_seed(42)
   torch.cuda.manual_seed_all(42)
 
