@@ -4,8 +4,7 @@ Created on Wed Mar  8 01:41:53 2023
 
 @author: narut
 """
-
-import requests
+from security import safe_requests
 
 
 def fetch_codechef_data(page=0, limit=100000, sort_order="asc"):
@@ -19,7 +18,7 @@ def fetch_codechef_data(page=0, limit=100000, sort_order="asc"):
     "category": "rated"
   }
   
-  response = requests.get(url, params=params)
+  response = safe_requests.get(url, params=params)
   
   if response.status_code == 200:
     if response.json()["data"]:
@@ -33,7 +32,7 @@ def fetch_codechef_data(page=0, limit=100000, sort_order="asc"):
   
 def fetch_problem_tags_description(title_slug):
   url = f"https://www.codechef.com/api/contests/PRACTICE/problems/{title_slug}"
-  response = requests.get(url)
+  response = safe_requests.get(url)
   
   if response.status_code == 200:
     data = response.json()
