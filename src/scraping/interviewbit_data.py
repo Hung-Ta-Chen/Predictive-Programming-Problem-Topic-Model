@@ -4,8 +4,6 @@ Created on Fri Mar 10 13:37:18 2023
 
 @author: narut
 """
-
-import requests
 from bs4 import BeautifulSoup
 import re
 from selenium import webdriver
@@ -13,6 +11,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import StaleElementReferenceException
 from webdriver_manager.chrome import ChromeDriverManager
+from security import safe_requests
 
 
 def fetch_interviewbit_problems(num=700):
@@ -30,7 +29,7 @@ def fetch_interviewbit_problems(num=700):
       "page_limit": page_limit
     }
     
-    response = requests.get(url, params=params)
+    response = safe_requests.get(url, params=params)
     
     if response.status_code == 200:
       if response.json()["items"]:
@@ -65,7 +64,7 @@ def get_ac(wd, title):
 
 def get_description(title):
   url = f"https://www.interviewbit.com/problems/{title}/"
-  response=requests.get(url)
+  response=safe_requests.get(url)
   
   if response.status_code == 404:
     return None
