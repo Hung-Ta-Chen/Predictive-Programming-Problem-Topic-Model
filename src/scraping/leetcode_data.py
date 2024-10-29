@@ -91,7 +91,7 @@ def fetch_leetcode_problems(difficulty=None, tags=[], companies=[], listId=None,
     variables = {"categorySlug": "", "skip": 100*iter, "limit": 100, "filters": filters}
     
     # Send the request
-    response = requests.post(url, json={'query': query, "variables": variables}, headers=headers)
+    response = requests.post(url, json={'query': query, "variables": variables}, headers=headers, timeout=60)
     
     if response.status_code == 200:
       if response.json()["data"]["problemsetQuestionList"]:
@@ -149,7 +149,7 @@ def fetch_problem_company_stat(title):
   variables = {"titleSlug": title}
 
   # Send the request
-  response = requests.post(url, json={'query': query, "variables": variables}, headers=headers)
+  response = requests.post(url, json={'query': query, "variables": variables}, headers=headers, timeout=60)
 
   if response.status_code == 200:
     data = response.json()["data"]["question"]
@@ -196,7 +196,7 @@ def fetch_problem_content(title):
   variables = {"titleSlug": title}
   
   # Send the request
-  response = requests.post(url, json={'query': query, "variables": variables}, headers=headers)
+  response = requests.post(url, json={'query': query, "variables": variables}, headers=headers, timeout=60)
 
   if response.status_code == 200:
     data = response.json()["data"]["question"]

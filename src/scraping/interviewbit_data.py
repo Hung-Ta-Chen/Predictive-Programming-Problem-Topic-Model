@@ -30,7 +30,7 @@ def fetch_interviewbit_problems(num=700):
       "page_limit": page_limit
     }
     
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=params, timeout=60)
     
     if response.status_code == 200:
       if response.json()["items"]:
@@ -65,7 +65,7 @@ def get_ac(wd, title):
 
 def get_description(title):
   url = f"https://www.interviewbit.com/problems/{title}/"
-  response=requests.get(url)
+  response=requests.get(url, timeout=60)
   
   if response.status_code == 404:
     return None
