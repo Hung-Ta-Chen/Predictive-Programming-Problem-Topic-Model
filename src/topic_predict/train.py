@@ -8,7 +8,6 @@ Created on Mon Mar 13 16:40:58 2023
 import torch
 import torch.nn as nn
 import os
-import random
 from torch.utils.data import random_split, DataLoader, Subset
 from tqdm import tqdm
 from dataset import LeetcodeDataset
@@ -17,6 +16,7 @@ import matplotlib.pyplot as plt
 from predict import predict, predict_topics, decode_topics
 from sklearn.metrics import multilabel_confusion_matrix
 import pandas as pd
+import secrets
 
 # Define constants
 MAX_LEN = 128
@@ -127,7 +127,7 @@ def train(num_epochs, train_loader, val_loader, model, optimizer, criterion, dev
                 
 if __name__ == "__main__":
     # Set random seeds for reproducibility
-    random.seed(42)
+    secrets.SystemRandom().seed(42)
     torch.manual_seed(42)
     torch.cuda.manual_seed_all(42)
 
