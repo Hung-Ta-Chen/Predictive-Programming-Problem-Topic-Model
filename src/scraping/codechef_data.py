@@ -19,7 +19,7 @@ def fetch_codechef_data(page=0, limit=100000, sort_order="asc"):
     "category": "rated"
   }
   
-  response = requests.get(url, params=params)
+  response = requests.get(url, params=params, timeout=60)
   
   if response.status_code == 200:
     if response.json()["data"]:
@@ -33,7 +33,7 @@ def fetch_codechef_data(page=0, limit=100000, sort_order="asc"):
   
 def fetch_problem_tags_description(title_slug):
   url = f"https://www.codechef.com/api/contests/PRACTICE/problems/{title_slug}"
-  response = requests.get(url)
+  response = requests.get(url, timeout=60)
   
   if response.status_code == 200:
     data = response.json()
